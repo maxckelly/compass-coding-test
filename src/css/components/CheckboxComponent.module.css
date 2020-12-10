@@ -1,0 +1,11 @@
+.label {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.checkbox {
+  width: 25px;
+  height: 25px;
+  padding: 6px;
+}

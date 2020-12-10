@@ -1,17 +1,24 @@
 .container {
   border: 1px solid grey;
-  background-color: rgba(255, 180, 0);
+  background-color: white;
   width: 100%;
   border-radius: 0.5rem;
   box-shadow: 2px 3px darkgray;
-  cursor: pointer;
-}
-
-.container:hover {
-  transform: scale(1.03);
+  margin: 1rem;
 }
 
 .title {
   margin-left: 1rem;
   color:rgba(22, 42, 76);
+}
+
+.subTitle {
+  margin-left: 1rem;
+  color: rgba(22, 42, 76);
+  font-weight: normal;
+}
+
+.optionsContainer {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
 }

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 
 // Components
 import QuestionCardComponent from './../components/QuestionCardComponent';
+import ButtonComponent from './../components/ButtonComponent';
 
 // Styles
-import styles from './../css/pages/surveyPage.module.css';
+import styles from './../css/pages/SurveyQuestionsPage.module.css';
 
 const SurveysQuestionsPage = ({history, location}) => {
   // Get state from route state
@@ -14,16 +15,23 @@ const SurveysQuestionsPage = ({history, location}) => {
   // Map and render questions
   const displayQuestions = () => {
     const question = questions.map((q) => {
-      return <QuestionCardComponent title={q.title} subTitle={q.subTitle} />
+      return <QuestionCardComponent title={q.title} subTitle={q.subTitle} options={q.options} />
     });
 
     return question;
   };
 
   return (
-    <div className={styles.surveysContainer}>
-      <h2>{name}</h2>
-      {displayQuestions()}
+    <div className={styles.questionsContainer}>
+      <h2 className={styles.title}>{name}</h2>
+      <div className={styles.questionContainer}>
+        {displayQuestions()}
+      </div>
+
+      <div className={styles.buttonContainer}>
+        <ButtonComponent title="Back" handleOnClick={() => history.push("/")}/>
+        <ButtonComponent title="Submit" handleOnClick={() => console.log("MAX")}/>
+      </div>
     </div>
   )
 };
