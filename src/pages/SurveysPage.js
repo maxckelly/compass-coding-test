@@ -24,14 +24,17 @@ const SurveysPage = ({history}) => {
     }
   };
 
-  const onSurveyPress = (id) => {
-    history.push(`/survey/${id}`)
+  const onSurveyPress = (id, item) => {
+    history.push({
+      pathname: `/survey/${id}`,
+      state: {survey: item}
+    });
   };
 
   // render the survey component
   const displaySurveys = () => {
     const survey = surveys.map((survey) => {
-      return <SurveyDisplayCardComponent key={survey.id} surveyTitle={survey.name} handleOnClick={() => onSurveyPress(survey.id)}/>
+      return <SurveyDisplayCardComponent key={survey.id} surveyTitle={survey.name} handleOnClick={() => onSurveyPress(survey.id, survey)}/>
     });
 
     return survey;
