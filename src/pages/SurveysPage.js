@@ -9,7 +9,7 @@ import SurveyDisplayCardComponent from './../components/SurveyDisplayCardCompone
 // Styles
 import styles from './../css/pages/surveyPage.module.css';
 
-const SurveysPage = () => {
+const SurveysPage = ({history}) => {
 
   const [surveys, setSurveys] = useState(null);
 
@@ -24,10 +24,14 @@ const SurveysPage = () => {
     }
   };
 
+  const onSurveyPress = (id) => {
+    history.push(`/survey/${id}`)
+  };
+
   // render the survey component
   const displaySurveys = () => {
     const survey = surveys.map((survey) => {
-      return <SurveyDisplayCardComponent key={survey.id} surveyTitle={survey.name} handleOnClick={() => console.log("CLICK")}/>
+      return <SurveyDisplayCardComponent key={survey.id} surveyTitle={survey.name} handleOnClick={() => onSurveyPress(survey.id)}/>
     });
 
     return survey;
@@ -40,7 +44,7 @@ const SurveysPage = () => {
   return (
     <div>
       <div className={styles.surveysContainer}>
-        <h1>Compass Surveys</h1>
+        <h1 className={styles.title}>Surveys</h1>
         <div className={styles.surveyContainer}>
           {surveys && displaySurveys()}
         </div>

@@ -1,10 +1,13 @@
 import React from 'react';
 
+// styles
+import styles from './../css/components/NavbarComponent.module.css';
+
 const Navbar = ({pageTitle}) => {
 
   return (
-    <nav>
-      <h2>{pageTitle}</h2>
+    <nav className={styles.container}>
+      <h2 className={styles.header}>{pageTitle}</h2>
     </nav>
   )
 };

@@ -6,6 +6,7 @@ import { UnprotectedRoutes } from './Routes';
 
 // Pages
 import SurveysPage from './../pages/SurveysPage';
+import SurveysQuestionPage from './../pages/SurveysQuestionsPage';
 
 const AppRouter = () => {
   return (
@@ -15,12 +16,12 @@ const AppRouter = () => {
           <UnprotectedRoutes 
             path="/"
             component={SurveysPage}
-            pageTitle="Surveys Page"
+            pageTitle="Compass Surveys Page"
             exact
           />
           <UnprotectedRoutes 
-            path="/survey"
-            component={SurveysPage}
+            path="/survey/:id"
+            component={SurveysQuestionPage}
             pageTitle="Survey Questions"
             exact
           />
