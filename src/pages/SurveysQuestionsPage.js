@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 // Components
 import QuestionCardComponent from './../components/QuestionCardComponent';
 
+// Styles
+import styles from './../css/pages/surveyPage.module.css';
 
 const SurveysQuestionsPage = ({history, location}) => {
   // Get state from route state
@@ -19,7 +21,7 @@ const SurveysQuestionsPage = ({history, location}) => {
   };
 
   return (
-    <div>
+    <div className={styles.surveysContainer}>
       <h2>{name}</h2>
       {displayQuestions()}
     </div>
