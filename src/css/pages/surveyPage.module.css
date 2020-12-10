@@ -1,0 +1,14 @@
+.surveysContainer {
+  padding: 4rem;
+  border: 1px solid grey;
+  margin: 3rem;
+  border-radius: 1rem;
+}
+
+.surveyContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}

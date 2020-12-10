@@ -1,0 +1,16 @@
+.container {
+  border: 1px solid grey;
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 2px 3px darkgray;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.container:hover {
+  transform: scale(1.03);
+}
+
+.title {
+  text-align: center;
+}

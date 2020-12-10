@@ -1,10 +1,13 @@
 import React from 'react';
 
-const SurveyDisplayCardComponent = ({surveyTitle}) => {
+// Styles
+import styles from './../css/components/SurveyDisplayCardComponent.module.css';
+
+const SurveyDisplayCardComponent = ({surveyTitle, handleOnClick}) => {
 
   return (
-    <div>
-      <h2>{surveyTitle}</h2>
+    <div className={styles.container} onClick={handleOnClick}>
+      <h2 className={styles.title}>{surveyTitle}</h2>
     </div>
   )
 };
