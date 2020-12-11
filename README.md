@@ -65,4 +65,5 @@
   - This creates an `axios` route and exports it from the with the .env variable
 
   ### Surveys
-  - This file makes a get request to the server returning the response data.
+  - `/surveys` : This API call makes a get request to the server returning the response data.
+  - `/surveys/:id` : This API call makes a get request to the server returning the individual survey, it only does this when the location.state data is null.
