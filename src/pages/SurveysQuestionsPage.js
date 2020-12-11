@@ -15,7 +15,7 @@ const SurveysQuestionsPage = ({history, location}) => {
   // Map and render questions
   const displayQuestions = () => {
     const question = questions.map((q) => {
-      return <QuestionCardComponent title={q.title} subTitle={q.subTitle} options={q.options} />
+      return <QuestionCardComponent key={q.order} title={q.title} subTitle={q.subTitle} options={q.options} />
     });
 
     return question;
