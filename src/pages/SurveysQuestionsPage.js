@@ -10,7 +10,7 @@ import styles from './../css/pages/SurveyQuestionsPage.module.css';
 const SurveysQuestionsPage = ({history, location}) => {
   // Get state from route state
   const { name } = location.state.survey;
-  const [questions, setQuestions] = useState(location.state.survey.questions);
+  const [questions] = useState(location.state.survey.questions);
 
   // Map and render questions
   const displayQuestions = () => {
@@ -19,6 +19,12 @@ const SurveysQuestionsPage = ({history, location}) => {
     });
 
     return question;
+  };
+
+  // This handles the on survey submit
+  const onSubmit = () => {
+    alert('Your survey results have been submitted');
+    return history.push('/');
   };
 
   return (
@@ -30,7 +36,7 @@ const SurveysQuestionsPage = ({history, location}) => {
 
       <div className={styles.buttonContainer}>
         <ButtonComponent title="Back" handleOnClick={() => history.push("/")}/>
-        <ButtonComponent title="Submit" handleOnClick={() => console.log("MAX")}/>
+        <ButtonComponent title="Submit" handleOnClick={() => onSubmit()}/>
       </div>
     </div>
   )
