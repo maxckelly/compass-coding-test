@@ -9,3 +9,13 @@ export const getAllSurveys = async () => {
     return error;
   }
 };
+
+export const getSurvey = async (id) => {
+  try {
+    const response = await axiosAPI.get(`/surveys/${id}`);
+    return response;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
